@@ -1,0 +1,33 @@
+app:
+  bot:
+    botUsername: ${BOT_USERNAME}
+    botToken: ${TOKEN_BOT}
+
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: org.postgresql.Driver
+
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yml
+
+
+  jpa:
+    properties:
+      hibernate:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    open-in-view: true
+
+  output:
+    ansi:
+      enabled: always
+
+  config:
+    import: optional:file:.env[.properties]
+
+logging:
+  config: classpath:logback-spring.xml

@@ -10,25 +10,14 @@
     </parent>
     <groupId>ru.greemlab</groupId>
     <artifactId>template-telegram-bot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.</version>
     <name>template-telegram-bot</name>
     <description>template-telegram-bot</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+
     <properties>
         <java.version>21</java.version>
         <kotlin.version>1.9.25</kotlin.version>
+        <telegrambots.version>6.9.7.1</telegrambots.version>
     </properties>
     <dependencies>
         <dependency>
@@ -49,10 +38,27 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots-spring-boot-starter</artifactId>
+            <version>${telegrambots.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test-junit5</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-coroutines-core</artifactId>
+            <version>1.8.1</version>
         </dependency>
     </dependencies>
 
